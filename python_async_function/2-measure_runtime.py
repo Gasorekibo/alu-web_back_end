@@ -1,26 +1,22 @@
 #!/usr/bin/env python3
-
 """
-    This module contains a with two arguments n and max_delay
-    which are both integers. It measures the total execution
-    time for wait_n(n, max_delay) and returns the total_time/n
-    which should be a float.
+Measure runtime of asynchronous function
 """
 
 import asyncio
-from time import time
+import time
+
+
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def measure_time(n: int, max_delay: int) -> float:
+def measure_time(n: int, max_delay: int) -> float:
     """
-        measures the total execution time for wait_n(n, max_delay),
-        and returns total_time / n. Your function should return
-        a float
+    Function that measures the total execution time for 'wait_n(n, max_delay)'
+    Return -> float:
+        'total_time/n'
     """
-
-    start_time = time()
-    await wait_n(n, max_delay)
-    end_time = time()
-    elapsed_time = end_time - start_time
-    return elapsed_time/n
+    s = time.perf_counter()
+    asyncio.run(wait_n(n, max_delay))
+    total_time = time.perf_counter() - s
+    return total_time / n
