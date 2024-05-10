@@ -12,11 +12,11 @@ task_wait_random = __import__('3-tasks').task_wait_random
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-        Function that executes multiple coroutines 
+        Function that executes multiple coroutines
         by calling 'task_wait_random'
         Args:
             n -> number of times to spawn 'task_wait_random'
-            max_delay -> the number of seconds to wait 
+            max_delay -> the number of seconds to wait
             before returning output
     """
     tasks = [task_wait_random(max_delay) for _ in range(n)]
