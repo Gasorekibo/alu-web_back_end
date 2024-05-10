@@ -34,4 +34,4 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
 
 if __name__ == "__main__":
     asyncio.run(wait_n)
-    
+  
