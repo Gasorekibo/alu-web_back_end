@@ -18,7 +18,8 @@ BEGIN
             LEAVE read_loop;
         END IF;
 
-        SELECT AVG(c.score * p.weight) INTO avg_weighted_score
+        SELECT SUM(c.score * p.weight) / SUM(p.weight)
+        INTO avg_weighted_score
         FROM corrections c
         INNER JOIN projects p ON c.project_id = p.id
         WHERE c.user_id = user_id;
