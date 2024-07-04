@@ -7,7 +7,7 @@ BEGIN
     DECLARE sum_weighted_scores FLOAT;
     DECLARE total_weight FLOAT;
 
-    -- Compute the sum of (score * weight) and total weight
+    -- Compute the sum of (score * weight) and total weight for the given user
     SELECT SUM(c.score * p.weight), SUM(p.weight)
     INTO sum_weighted_scores, total_weight
     FROM corrections c
