@@ -2,7 +2,7 @@
 SELECT
     band_name,
     CASE
-        WHEN split IS NULL THEN YEAR(CURDATE()) - formed
+        WHEN split = 0 OR split IS NULL THEN YEAR(CURDATE()) - formed
         ELSE split - formed
     END AS lifespan
 FROM
