@@ -10,7 +10,7 @@ function getLast() {
 function taskNext() {
   let combination = taskFirst();
   combination += ' But sometimes let'
-   combination += getLast();
-   return combination
+  combination += getLast();
+  return combination;
 }
 console.log(taskNext());
