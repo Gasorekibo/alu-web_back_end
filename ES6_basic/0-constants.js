@@ -12,5 +12,5 @@ function taskNext() {
   combination += getLast();
   return combination;
 }
-taskFirst()
-taskNext()
+console.log(taskFirst());
+console.log(taskNext());
