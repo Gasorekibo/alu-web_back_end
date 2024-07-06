@@ -1,6 +1,11 @@
 function taskFirst() {
   const task = 'I prefer const when I can';
-  let changeValue = 'But sometimes let';
-  return `${task} ${changeValue}`;
+  return task;
 }
-taskFirst()
+
+function taskNext() {
+  let task = 'But sometimes let';
+  return task;
+}
+taskFirst();
+taskNext();
