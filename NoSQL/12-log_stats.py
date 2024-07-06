@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
+#!/usr/bin/env python3
 from pymongo import MongoClient
-"""
-    Connect to MongoDB server running on localhost at port 27017
-"""
-client = MongoClient('localhost', 27017)
+""" pythong with pymongo"""
 
+client = MongoClient('localhost', 27017)
 # Access the 'logs' database and 'nginx' collection
 db = client.logs
 collection = db.nginx
