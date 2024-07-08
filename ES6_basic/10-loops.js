@@ -1,5 +1,5 @@
 function appendToEachArrayValue(array, appendString) {
-  const result = [];
+  var result = [ ];
   for (const idx of array) {
     result.push(appendString + idx);
   }
