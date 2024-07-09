@@ -1,5 +1,5 @@
-function getResponseFromAPI() {
-  return Promise.resolve()
+export default function getResponseFromAPI() {
+  return new Promise((resolve, reject) => {
+    resolve("Response received");
+  });
 }
-const resp = getResponseFromAPI()
-console.log(resp instanceof Promise)
