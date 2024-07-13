@@ -8,10 +8,9 @@ export default async function asyncUploadUser() {
       photo: upload,
       user,
     };
-  } else {
-    return {
-      photo: null,
-      user: null,
-    };
   }
+  return {
+    photo: null,
+    user: null,
+  };
 }
