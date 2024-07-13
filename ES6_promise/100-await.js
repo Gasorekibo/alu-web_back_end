@@ -7,7 +7,7 @@ export default async function asyncUploadUser() {
     if (upload && user) {
       return {
         photo: upload,
-        user: user,
+        user,
       };
     }
   } catch (error) {
