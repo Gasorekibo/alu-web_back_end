@@ -35,8 +35,8 @@ export default class HolbertonCourse {
 
   set students(newStudents) {
     if (
-      Array.isArray(newStudents) &&
-      newStudents.every((element) => typeof element === 'string')
+      Array.isArray(newStudents)
+      && newStudents.every((student) => typeof student === 'string')
     ) {
       this._students = newStudents;
     } else {
