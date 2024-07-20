@@ -7,24 +7,29 @@ export default class HolbertonCourse {
   get name() {
     return this._name;
   }
+
   get length() {
     return this._length;
   }
+
   get students() {
     return this._students;
   }
+
   set name(newName) {
     if (typeof newName === 'string') {
       this._name = newName;
     }
     throw TypeError('name must of type string');
   }
+
   set length(newLength) {
     if (typeof newLength === 'number') {
       this._length = newLength;
     }
     throw TypeError('Length must be of type number');
   }
+  
   set students(newStudents) {
     if (
       Array.isArray(newStudents) &&
