@@ -3,13 +3,15 @@ export default function updateStudentGradeByCity(arr, city, newGrades) {
     ? arr.filter((each) => each.location === city)
     : [];
 
-  return students.map((each) => 
+  return students.map((each) => {
     newGrades.filter((grad) => {
       if (each.id === grad.studentId) {
         each.grade = grad.grade;
       } else {
         each.grade = 'N/A';
       }
-    })
-  );
+    });
+
+    return each;
+  });
 }
