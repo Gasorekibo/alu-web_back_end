@@ -1,14 +1,8 @@
 class HobertonCourse {
   constructor(name, length, students) {
-    if (
-      typeof name === 'string' &&
-      typeof length === 'number' &&
-      Array.isArray(students)
-    ) {
-      this._name = name;
-      this._length = length;
-      this._students = students;
-    }
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
   get name() {
     return this._name;
@@ -23,15 +17,22 @@ class HobertonCourse {
     if (typeof newName === 'string') {
       this._name = newName;
     }
+    throw TypeError('name must of type string');
   }
   set length(newLength) {
     if (typeof newLength === 'number') {
       this._length = newLength;
     }
+    throw TypeError('Length must be of type number');
   }
   set students(newStudents) {
-    if (Array.isArray(newStudents)) {
+    if (
+      Array.isArray(newStudents) &&
+      newStudents.every((element) => typeof element === 'string')
+    ) {
       this._students = newStudents;
+    } else {
+      throw TypeError('students must be an array of strings');
     }
   }
 }
