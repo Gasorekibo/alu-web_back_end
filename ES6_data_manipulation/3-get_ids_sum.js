@@ -1,5 +1,3 @@
 export default function getStudentIdsSum(arr) {
-  return Array.isArray(arr)
-    ? arr.map((ele) => ele.id).reduce((sum, id) => sum + id)
-    : 0;
+  return Array.isArray(arr) ? arr.reduce((sum, curr) => sum + curr.id, 0) : 0;
 }
