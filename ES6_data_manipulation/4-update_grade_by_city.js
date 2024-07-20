@@ -6,7 +6,7 @@ export default function updateStudentGradeByCity(arr, city, newGrades) {
   return students.map((each) => {
     newGrades.filter((grad) => {
       if (each.id === grad.studentId) {
-        each.grade = grad.grade;
+        each.grade = grad.grade || 'N/A';
       }
     });
 
