@@ -1,7 +1,18 @@
-export default function cleanSet(arg, str) {
-  const result = new Set(
-    [...arg].filter((el) => el.toString().startsWith(str))
-  );
-  const arr = [...result].join('-').replaceAll(str, '');
-  return arr;
+export default function cleanSet(set, str) {
+  if (
+    !set ||
+    !str ||
+    typeof set !== 'object' ||
+    typeof str !== 'string'
+  ) {
+    return '';
+  }
+
+  return [...set]
+    .filter(
+      (el) =>
+        typeof el === 'string' && el.startsWith(str)
+    )
+    .map((el) => el.replace(str, ''))
+    .join('-');
 }
