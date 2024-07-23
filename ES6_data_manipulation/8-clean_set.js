@@ -1,9 +1,9 @@
 export default function cleanSet(set, str) {
   if (
-    !set ||
-    !str ||
-    typeof set !== 'object' ||
-    typeof str !== 'string'
+    !set
+    || !str
+    || typeof set !== 'object'
+    || typeof str !== 'string'
   ) {
     return '';
   }
