@@ -3,12 +3,12 @@ const fs = require('fs');
 
 const readDb = async (path) =>
   new Promise((resolve, reject) => {fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
-      if (err) {
-        reject(new Error('Cannot load the database'));
-        return;
-      }
-      resolve(data);
-    });
+    if (err) {
+    reject(new Error('Cannot load the database'));
+    return;
+    }
+    resolve(data);
+});
   });
 
 const app = http.createServer(async (req, res) => {
