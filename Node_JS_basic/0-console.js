@@ -1,3 +1,3 @@
-export default function displayMessage() {
-  console.log('Hello, Nodejs Developers!');
+export default function displayMessage(message) {
+  console.log(message);
 }
