@@ -10,14 +10,14 @@ app.get('/', (req, res) => {
 });
 
 const readDb = async (path) => new Promise((resolve, reject) => {
-    fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
-      if (err) {
-        reject(new Error('Cannot load the database'));
-        return;
-      }
-      resolve(data);
-    });
+  fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
+    if (err) {
+      reject(new Error('Cannot load the database'));
+      return;
+    }
+    resolve(data);
   });
+});
 
 app.get('/students', async (req, res) => {
   res.statusCode = 200;
