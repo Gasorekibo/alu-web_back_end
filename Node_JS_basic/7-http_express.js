@@ -10,8 +10,7 @@ app.get('/', (req, res) => {
 });
 
 const readDb = async (path) =>
-  new Promise((resolve, reject) => {
-    fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
+  new Promise((resolve, reject) => { fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
         return;
