@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 
-const readDb = async (path) => new Promise((resolve, reject) => { 
+const readDb = async (path) => new Promise((resolve, reject) => {
   fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
     if (err) {
       reject(new Error('Cannot load the database'));
@@ -9,7 +9,7 @@ const readDb = async (path) => new Promise((resolve, reject) => {
     }
     resolve(data);
   });
-  });
+});
 
 const app = http.createServer(async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
